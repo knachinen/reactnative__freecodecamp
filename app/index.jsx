@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, ImageBackground, Pressable } from 'react-native
 // import React from 'react'
 import { Link } from 'expo-router'
 
-import icedChocolate from '@/assets/images/vegan-chocolate-drink-01.jpg'
+import chocolateBg from '@/assets/images/vegan-chocolate-drink-01.jpg'
 // import icedCoffee from '@/assets/images/iced-coffee.png'
 
 // This is a simple React Native component that displays an image of iced chocolate
@@ -12,16 +12,29 @@ const app = () => {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={ icedChocolate }
+        source={ chocolateBg }
         style={ styles.image }
         resizeMode="cover"
       >
-        <Text style={styles.title}>chocolate</Text>
-        <Link href="/contact" style={{ marginHorizontal: "auto" }} asChild>
-        <Pressable style={styles.button}>
-          <Text style={styles.buttonText}>contact</Text>
-        </Pressable>
-        </Link>
+        <View style={styles.overlay}>
+          <View style={styles.container}>
+            <Text style={styles.title}>
+              {'ch.\nocol-ate'}
+            </Text>
+          </View>
+          <View style={styles.container}>
+            <Link href="/menu" style={{ marginHorizontal: "auto" }} asChild>
+              <Pressable style={styles.button}>
+                <Text style={styles.buttonText}>menu</Text>
+              </Pressable>
+            </Link>
+            <Link href="/contact" style={{ marginHorizontal: "auto" }} asChild>
+              <Pressable style={styles.button}>
+                <Text style={styles.buttonText}>contact</Text>
+              </Pressable>
+            </Link>
+          </View>
+        </View>
       </ImageBackground>
     </View>
   )
@@ -33,10 +46,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#f5f5f5',
+    // backgroundColor: '#f5f5f5',
     // padding: 20,
     // justifyContent: 'center',
     // alignItems: 'center',
+  },
+  overlay: {
+    // This overlay makes the text more readable on top of the image.
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 16,
+    padding: 24,
   },
   image: {
     width: '100%',
@@ -62,9 +84,10 @@ const styles = StyleSheet.create({
     fontSize: 75,
     color: 'rgba(255, 255, 255, 0.3)',
     fontWeight: 'bold',
-    textAlign: 'center',
+    textAlign: 'right',
     // justifyContent: 'center',
     // marginBottom: 150,
+    marginTop: 75,
   },
   link: {
     fontSize: 30,
@@ -91,6 +114,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     padding: 4,
+    textTransform: 'uppercase',
+    letterSpacing: 1,
+    // textDecorationLine: 'underline',
   },
 })
 

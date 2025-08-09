@@ -5,7 +5,8 @@
 
 // import { HeaderBackground } from "@react-navigation/elements";
 
-const tintColorLight = '#0a7ea4';
+// const tintColorLight = '#0a7ea4';
+const tintColorLight = '#6E3D35';
 const tintColorDark = '#fff';
 
 export const Colors = {
