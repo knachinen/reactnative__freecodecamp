@@ -4,7 +4,13 @@
     "slug": "my-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    // "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/chocolate-icon.jpg",
+    "splash": {
+      "image": "./assets/images/vegan-chocolate-drink-02.jpg",
+      "resizeMode": "cover",
+      "backgroundColor": "#000000"
+    },
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -28,10 +34,12 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          // "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/vegan-chocolate-drink-02.jpg",
+          // "imageWidth": 200,
+          // "resizeMode": "contain",
+          "resizeMode": "cover",
+          "backgroundColor": "#000000"
         }
       ]
     ],
